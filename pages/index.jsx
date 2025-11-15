@@ -56,7 +56,7 @@ const projects = [
 		title: "Portfolio Site",
 		description:
 			"This Next.js portfolio demonstrating pages, layout, and simple components. Built with React 19 and Next.js 16.",
-		githubUrl: "https://github.com/sanaung/portfolio-site",
+		githubUrl: "https://github.com/Sanaunggithub/my-portfolio",
 		image: "/projects/portfolio.png",
 	},
 	{
