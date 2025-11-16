@@ -578,7 +578,7 @@ export default function Home() {
 										while growing personally and professionally.
 								</p>
 								<a
-									href="/cv.pdf"
+									href="/cv.pdf" download ="cv.pdf"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="download-btn"
