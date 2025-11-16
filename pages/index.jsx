@@ -184,6 +184,8 @@ export default function Home() {
 				rel="stylesheet"
 				href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 				/>
+				<link rel="icon" href="/apple-touch-icon.png" />
+				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       		</Head>
 			<div
 			style={{
@@ -576,8 +578,9 @@ export default function Home() {
 										while growing personally and professionally.
 								</p>
 								<a
-									href="/cv.pdf"
-									download
+									href="https://drive.google.com/file/d/1rDCr8aI6Ke9GcOkX-d6wOIdMP9yo2r1H/view?usp=sharing"
+									target="_blank"
+									rel="noopener noreferrer"
 									className="download-btn"
 									style={{
 										display: "inline-flex",
@@ -592,7 +595,7 @@ export default function Home() {
 										fontWeight: "500",
 										transition: "all 0.2s ease",
 									}}
-								>
+									>
 									Download CV
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
