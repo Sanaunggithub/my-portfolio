@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
+// defines overall structure of every page
 export default function Document() {
   return (
     <Html>
@@ -11,7 +12,7 @@ export default function Document() {
       </Head>
       <body>
         <Main />
-        <NextScript />
+        <NextScript /> {/* add Nextjs script */}
       </body>
     </Html>
   )

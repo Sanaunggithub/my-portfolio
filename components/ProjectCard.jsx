@@ -21,7 +21,7 @@ export default function ProjectCard({ project, glassStyle }) {
       {/* Project Image */}
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
         <Image
-          src={`${project.image}?t=${Date.now()}`}
+          src={`${project.image}?t=${Date.now()}`} // add timestamp to prevent browser caching
           alt={project.title}
           fill
           priority
