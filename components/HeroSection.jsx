@@ -12,6 +12,7 @@ export default function HeroSection({ typedHeading, onNavigate }) {
           <div style={{ textAlign: "left", maxWidth: 500, width: "100%", padding: "0 1rem" }}>
             <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", marginBottom: "1rem", fontWeight: "700", color: "#000", lineHeight: 1.2 }}>
               {typedHeading}
+              {/* blink cursor */}
               <span style={{ borderRight: "3px solid #000", animation: "blink 0.7s infinite", marginLeft: "0.2rem" }} />
             </h1>
 

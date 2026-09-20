@@ -18,11 +18,11 @@ export default function SkillsSection() {
               transition: "transform 0.3s ease, box-shadow 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.transform = "translateY(-5px)"; // lift the card
               e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.1)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.transform = "translateY(0)"; // reset to normal
               e.currentTarget.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0,0,0,0.08)";
             }}
           >

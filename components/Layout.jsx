@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+// global layout for whole app
 export default function Layout({ children }) {
   return (
     <>

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 
+// layout for specific pages
 export default function PageLayout({ children }) {
   const [activeNav, setActiveNav] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function PageLayout({ children }) {
     { id: "skills", label: "Skills" },
     { id: "education", label: "Education" },
   ];
-
+  // scroll to each section
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "smooth" });
@@ -20,6 +21,7 @@ export default function PageLayout({ children }) {
 
   return (
     <>
+      {/* Head config — loads icons + font awesome */}
       <Head>
         <link
           rel="stylesheet"
@@ -29,7 +31,9 @@ export default function PageLayout({ children }) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
 
+      {/* Main page container */}
       <div style={{ background: "#ffffff", color: "#333", minHeight: "100vh" }}>
+        {/* Sticky navigation bar */}
         <nav
           style={{
             position: "sticky",
@@ -41,6 +45,7 @@ export default function PageLayout({ children }) {
             padding: "1rem",
           }}
         >
+          {/* Nav content wrapper */}
           <div
             style={{
               display: "flex",
@@ -50,6 +55,7 @@ export default function PageLayout({ children }) {
               margin: "0 auto",
             }}
           >
+            {/* Name */}
             <div
               style={{
                 fontSize: "1.3rem",
@@ -61,13 +67,14 @@ export default function PageLayout({ children }) {
               San Aung
             </div>
 
+            {/* Desktop navigation menu */}
             <div className="desktop-nav" style={{ display: "none", gap: "1.8rem" }}>
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => {
                     setActiveNav(item.id);
-                    scrollToSection(item.id);
+                    scrollToSection(item.id); // go to that section
                   }}
                   style={{
                     background: "none",
@@ -89,25 +96,28 @@ export default function PageLayout({ children }) {
               ))}
             </div>
 
+            {/* Hamburger button for mobile */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               style={{
-                display: "none",
+                display: "none", // hidden 
                 background: "none",
                 border: "none",
                 cursor: "pointer",
                 padding: "0.5rem",
-                display: "block",
+                display: "block", // visible on mobile
                 fontSize: "1.5rem",
                 color: "#0362fc",
               }}
               className="hamburger-btn"
               aria-label="Toggle menu"
             >
+              {/* Change icon when open/closed */}
               {isMobileMenuOpen ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
             </button>
           </div>
-
+          
+          {/* Mobile dropdown menu */}
           {isMobileMenuOpen && (
             <div
               style={{
@@ -161,7 +171,7 @@ export default function PageLayout({ children }) {
                     onClick={() => {
                       setActiveNav(item.id);
                       scrollToSection(item.id);
-                      setIsMobileMenuOpen(false);
+                      setIsMobileMenuOpen(false); // close menu
                     }}
                     style={{
                       display: "flex",
@@ -188,32 +198,46 @@ export default function PageLayout({ children }) {
             </div>
           )}
         </nav>
-
+        
+        {/* Page content goes here */}
         {children}
 
+        {/* Global CSS for animations + responsive layout */}
         <style jsx global>{`
+          /* Blinking animation */
           @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+          /* Download button styling */
           .download-btn:hover { background: #0339daff !important; color: #fff !important; border-color: #0339daff !important; }
           .download-btn svg { stroke: currentColor; }
           .download-btn:hover svg { stroke: #fff !important; }
 
+          /* Desktop — show nav */
           .desktop-nav { display: flex !important; }
+
+          /* Mobile — hidden by default */
           .mobile-menu { display: none !important; }
           .hamburger-btn { display: none !important; }
 
+          /* Tablet layout tweaks */
           @media (max-width: 900px) { #skills-grid { grid-template-columns: 1fr !important; padding: 0 1rem !important; } }
 
+          /* Mobile layout */
           @media (max-width: 768px) {
             .desktop-nav { display: none !important; }
             .hamburger-btn { display: block !important; }
             .mobile-menu { display: flex !important; }
+            
             #skills-grid { grid-template-columns: 1fr !important; padding: 0 0.5rem !important; }
+
+            /* Stack About section */
             .about-container { flex-direction: column !important; align-items: center !important; text-align: center !important; gap: 2rem !important; }
             .about-container > div:last-child { text-align: left !important; }
             .about-container p { text-align: left !important; }
             .about-container a { margin: 0 auto !important; }
           }
-
+            
+          /* Extra small screens */
           @media (max-width: 480px) {
             #skills-grid { gap: 1rem !important; }
             .about-container { gap: 1.5rem !important; }

@@ -33,8 +33,8 @@ export default function AboutSection() {
               </p>
 
               <a
-                href="/cv.pdf"
-                download="San_Aung_CV.pdf"
+                href="/resume.pdf"
+                download="San_Aung_Resume.pdf"
                 className="download-btn"
                 style={{
                   display: "inline-flex",
@@ -50,7 +50,7 @@ export default function AboutSection() {
                   transition: "all 0.2s ease",
                 }}
               >
-                Download CV
+                Download Resume
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", flexShrink: 0 }}>
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>

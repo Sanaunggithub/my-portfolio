@@ -9,7 +9,7 @@ export default function ProjectCard({ project, glassStyle }) {
       style={{
         position: "relative",
         borderRadius: "8px",
-        overflow: "hidden",
+        overflow: "hidden",  // prevents children from overflowing the rounded corners
         height: "320px",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
         transition: "transform 0.3s ease",
@@ -24,8 +24,8 @@ export default function ProjectCard({ project, glassStyle }) {
           src={`${project.image}?t=${Date.now()}`} // add timestamp to prevent browser caching
           alt={project.title}
           fill
-          priority
-          unoptimized
+          priority // loads early
+          unoptimized // skip Next image optimization
           style={{
             objectFit: "cover",
             transition: "filter 0.3s ease",
@@ -34,10 +34,10 @@ export default function ProjectCard({ project, glassStyle }) {
         />
       </div>
 
-      {/* Overlay Content */}
+      {/* Overlay Content(Text + Button) */}
       <div
         style={{
-          position: "absolute",
+          position: "absolute", // sits on the top image
           top: 0,
           left: 0,
           right: 0,
@@ -47,7 +47,7 @@ export default function ProjectCard({ project, glassStyle }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          opacity: isHovered ? 1 : 0,
+          opacity: isHovered ? 1 : 0, // only visible when hover
           transition: "opacity 0.3s ease",
         }}
       >
